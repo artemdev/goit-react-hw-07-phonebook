@@ -16,7 +16,9 @@ const mockupContacts = [
 ];
 
 export default function App() {
-  const [contacts, setContacts] = useState(localContacts || mockupContacts);
+  const [contacts, setContacts] = useState(() => {
+    return localContacts || mockupContacts;
+  });
   const [filter, setFilter] = useState('');
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
