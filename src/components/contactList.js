@@ -1,7 +1,9 @@
 import Section from './section';
 import shortid from 'shortid';
+import * as actions from '../utils/actions';
+import { connect } from 'react-redux';
 
-export default function ContactList({ contacts, filter, deleteContact }) {
+function ContactList({ contacts, filter, deleteContact }) {
   const filterContacts = () => {
     return contacts.filter(item => item.name.toLowerCase().includes(filter));
   };
@@ -11,9 +13,27 @@ export default function ContactList({ contacts, filter, deleteContact }) {
       {filterContacts().map(item => (
         <div key={shortid.generate()}>
           {item.name} {item.number}
-          <button onClick={() => deleteContact(item.id)}>delete</button>
+          <button onClick={() => deleteContact(contacts, item.id)}>
+            delete
+          </button>
         </div>
       ))}
     </Section>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    contacts: state.contacts,
+    filter: state.filter,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteContact: (contacts, id) =>
+      dispatch(actions.deleteContact(contacts, id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
