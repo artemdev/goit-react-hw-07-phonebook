@@ -1,9 +1,11 @@
 import Section from './section';
 import shortid from 'shortid';
-import * as actions from '../utils/actions';
+import * as contactsActions from '../redux/contacts/contacts-actions';
 import { connect } from 'react-redux';
 
 function ContactList({ contacts, filter, deleteContact }) {
+  console.log(contacts);
+  console.log(filter);
   const filterContacts = () => {
     return contacts.filter(item => item.name.toLowerCase().includes(filter));
   };
@@ -32,7 +34,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     deleteContact: (contacts, id) =>
-      dispatch(actions.deleteContact(contacts, id)),
+      dispatch(contactsActions.deleteContact(contacts, id)),
   };
 };
 

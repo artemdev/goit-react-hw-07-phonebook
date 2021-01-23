@@ -1,5 +1,5 @@
 import Section from './section';
-import * as actions from '../utils/actions';
+import * as contactsActions from '../redux/contacts/contacts-actions';
 import { connect } from 'react-redux';
 import shortid from 'shortid';
 
@@ -44,7 +44,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addContact: (number, name, id) =>
-      dispatch(actions.addContact(number, name, id)),
+      dispatch(contactsActions.addContact(number, name, id)),
   };
 };
 

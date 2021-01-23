@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import * as actions from '../utils/actions';
+import setFilter from '../redux/filter/filter-actions';
 
 function Filter({ setFilter }) {
   const changeFilter = e => {
@@ -15,7 +15,7 @@ function Filter({ setFilter }) {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    setFilter: value => dispatch(actions.setFilter(value)),
+    setFilter: value => dispatch(setFilter(value)),
   };
 };
 
