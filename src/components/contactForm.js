@@ -2,7 +2,7 @@ import Section from './section';
 import * as contactsActions from '../redux/contacts/contacts-actions';
 import { connect } from 'react-redux';
 import shortid from 'shortid';
-
+// import styles from '../styles/contactsForm.module.css'
 function ContactForm({ contacts, addContact }) {
   const handleContact = e => {
     e.preventDefault();
