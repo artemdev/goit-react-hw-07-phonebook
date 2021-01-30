@@ -4,3 +4,4 @@ In this homework I practiced React JS with:
 - Redux Selectors/Actions/Operations
 - Redux Toolkit
 
+<img src="./project.png">
