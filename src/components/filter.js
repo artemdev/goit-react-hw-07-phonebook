@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import setFilter from '../redux/filter/filter-actions';
 import * as styles from '../styles/phonebook.module.css';
-import Section from './section';
 function Filter({ setFilter }) {
   const changeFilter = e => {
     const { value } = e.target;
