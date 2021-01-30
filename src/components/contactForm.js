@@ -4,6 +4,7 @@ import { getContacts } from '../redux/contacts/contacts-selectors';
 import { connect, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getInitialContacts } from '../redux/api/api-actions.js';
+import * as styles from '../styles/phonebook.module.css';
 
 function ContactForm({ contacts, addContact }) {
   const dispatch = useDispatch();
@@ -23,20 +24,33 @@ function ContactForm({ contacts, addContact }) {
     addContact(contact);
   };
   return (
-    <Section title="Phonebook">
-      <form action="" onSubmit={handleContact}>
-        <label htmlFor="name">
-          Name <br />
-          <input type="text" id="name" />
-        </label>
-        <br />
-        <label htmlFor="number">
-          Number <br />
-          <input type="text" id="number" />
-        </label>
-        <br />
-
-        <button type="submit">Add contact</button>
+    <Section title="phonebook">
+      <form className={styles.phonebookForm} action="" onSubmit={handleContact}>
+        <div className={styles.phonebookInputWrap}>
+          <label className={styles.phonebookLabel} htmlFor="name">
+            Name
+          </label>
+          <input
+            className={styles.phonebookInput}
+            placeholder="Artem"
+            type=" text"
+            id="name"
+          />
+        </div>
+        <div className={styles.phonebookInputWrap}>
+          <label className={styles.phonebookLabel} htmlFor="number">
+            Phone Number
+          </label>
+          <input
+            className={styles.phonebookInput}
+            placeholder="05084838383"
+            type="text"
+            id="number"
+          />
+        </div>
+        <button className={styles.phonebookButton} type="submit">
+          add contact
+        </button>
       </form>
     </Section>
   );

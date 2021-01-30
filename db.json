@@ -1,9 +1,19 @@
 {
   "contacts": [
     {
-      "name": "sdf",
-      "number": "sdfsdf",
-      "id": 4
+      "name": "",
+      "number": "",
+      "id": 1
+    },
+    {
+      "name": "Artem123",
+      "number": "+971501030275",
+      "id": 2
+    },
+    {
+      "name": "Artem1231",
+      "number": "+971501030275",
+      "id": 3
     }
   ]
 }

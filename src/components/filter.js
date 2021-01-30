@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import setFilter from '../redux/filter/filter-actions';
-
+import * as styles from '../styles/phonebook.module.css';
+import Section from './section';
 function Filter({ setFilter }) {
   const changeFilter = e => {
     const { value } = e.target;
@@ -8,9 +9,17 @@ function Filter({ setFilter }) {
   };
 
   return (
-    <label htmlFor="filter">
-      <input type="text" id="filter" onChange={changeFilter} />
-    </label>
+    <div className={styles.phonebookInputWrap}>
+      <label className={styles.phonebookLabel} htmlFor=" filter">
+        Filter
+      </label>
+      <input
+        className={styles.phonebookInput}
+        type="text"
+        id="filter"
+        onChange={changeFilter}
+      />
+    </div>
   );
 }
 const mapDispatchToProps = dispatch => {
